@@ -1,0 +1,10 @@
+<root main_tree_to_execute = "MainTree" >
+  <BehaviorTree ID="MainTree">
+    <Sequence name="message_sequence">
+      <SaySomething   message="hello world" />
+      <SaySomething2  message="this works too" />
+      <ThinkWhatToSay text="{the_answer}" />
+      <SaySomething   message="{the_answer}"/>
+    </Sequence>
+  </BehaviorTree>
+</root>
