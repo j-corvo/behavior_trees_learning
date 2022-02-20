@@ -5,6 +5,8 @@
       <SaySomething2  message="this works too" />
       <ThinkWhatToSay text="{the_answer}" />
       <SaySomething   message="{the_answer}"/>
+      <SetBlackboard  output_key="the_answer" value="The answer changed" />
+      <SaySomething   message="{the_answer}"/>
     </Sequence>
   </BehaviorTree>
 </root>
