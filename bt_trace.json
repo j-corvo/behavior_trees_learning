@@ -1,0 +1,9 @@
+{"traceEvents":[
+{"cat":"Control","pid":0,"tid":1626239936,"ts":78,"ph":"B","name":"root_Fallback","args":{}},
+{"cat":"Control","pid":0,"tid":1626239936,"ts":93,"ph":"B","name":"door_open_sequence","args":{}},
+{"cat":"Condition","pid":0,"tid":1626239936,"ts":500260,"ph":"I","name":"IsDoorOpen","args":{}},
+{"cat":"Action","pid":0,"tid":1626239936,"ts":500273,"ph":"B","name":"PassThroughDoor","args":{}},
+{"cat":"Action","pid":0,"tid":1626239936,"ts":1500450,"ph":"E","name":"PassThroughDoor","args":{}},
+{"cat":"Control","pid":0,"tid":1626239936,"ts":1500478,"ph":"E","name":"door_open_sequence","args":{}},
+{"cat":"Control","pid":0,"tid":1626239936,"ts":1500537,"ph":"E","name":"root_Fallback","args":{}}
+]}

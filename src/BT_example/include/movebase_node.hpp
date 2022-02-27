@@ -14,6 +14,8 @@ inline void SleepMS(int ms)
   std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 }
 
+inline void registerNodeMoveBase(BT::BehaviorTreeFactory &factory);
+
 namespace BT
 {
   // This template specialization is needed only if you want
