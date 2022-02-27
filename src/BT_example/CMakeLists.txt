@@ -61,6 +61,7 @@ add_executable(bt_factory_message_node src/bt_factory_message_node.cpp)
 add_executable(bt_goal_node src/bt_goal_node.cpp)
 add_executable(bt_mission_node src/bt_mission_node.cpp)
 add_executable(bt_crossdoor_node src/bt_crossdoor_node.cpp)
+add_executable(bt_remap_ports_node src/bt_remap_ports_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -75,6 +76,7 @@ add_dependencies(bt_factory_message_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${c
 add_dependencies(bt_goal_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(bt_mission_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(bt_crossdoor_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(bt_remap_ports_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(bt_factory_node ${catkin_LIBRARIES})
@@ -82,6 +84,7 @@ target_link_libraries(bt_factory_message_node ${catkin_LIBRARIES})
 target_link_libraries(bt_goal_node ${catkin_LIBRARIES})
 target_link_libraries(bt_mission_node ${catkin_LIBRARIES})
 target_link_libraries(bt_crossdoor_node ${catkin_LIBRARIES})
+target_link_libraries(bt_remap_ports_node ${catkin_LIBRARIES})
 
 # add_library(bt_sample_nodes STATIC
 #     movebase_node.cpp )

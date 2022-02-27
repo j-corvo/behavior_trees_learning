@@ -13,7 +13,7 @@ namespace CrossDoor
 
   // For simplicity, in this example the status of the door is not shared
   // using ports and blackboards
-  static bool _door_open = true;
+  static bool _door_open = false;
   static bool _door_locked = false;
 
   NodeStatus IsDoorOpen()
