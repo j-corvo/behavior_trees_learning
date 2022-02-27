@@ -1,5 +1,5 @@
-#ifndef __GRIPPER_INTERFACE_H_
-#define __GRIPPER_INTERFACE_H_
+#ifndef __GRIPPER_INTERFACE_HPP_
+#define __GRIPPER_INTERFACE_HPP_
 
 #include "behaviortree_cpp_v3/action_node.h"
 

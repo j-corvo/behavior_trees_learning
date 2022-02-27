@@ -1,5 +1,5 @@
-#ifndef __APPROACH_OBJECT_H_
-#define __APPROACH_OBJECT_H_
+#ifndef __APPROACH_OBJECT_HPP_
+#define __APPROACH_OBJECT_HPP_
 
 #include "behaviortree_cpp_v3/action_node.h"
 

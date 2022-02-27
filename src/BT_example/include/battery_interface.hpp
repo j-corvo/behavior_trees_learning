@@ -1,5 +1,5 @@
-#ifndef __BATERRY_INTERFACE_H_
-#define __BATTERY_INTERFACE_H_
+#ifndef __BATERRY_INTERFACE_HPP_
+#define __BATTERY_INTERFACE_HPP_
 
 #include "behaviortree_cpp_v3/action_node.h"
 

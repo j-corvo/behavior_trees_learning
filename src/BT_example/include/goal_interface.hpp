@@ -1,5 +1,5 @@
-#ifndef __CalculateGoal_H_
-#define __CalculateGoal_H_
+#ifndef __CalculateGoal_HPP_
+#define __CalculateGoal_HPP_
 
 #include "behaviortree_cpp_v3/action_node.h"
 #include "convert_from_string.hpp"

@@ -1,5 +1,5 @@
-#ifndef __SAY_SOMETHING_H_
-#define __SAY_SOMETHING_H_
+#ifndef __SAY_SOMETHING_HPP_
+#define __SAY_SOMETHING_HPP_
 
 #include "behaviortree_cpp_v3/action_node.h"
 
