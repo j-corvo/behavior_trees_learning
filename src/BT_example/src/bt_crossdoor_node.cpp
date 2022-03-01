@@ -1,5 +1,5 @@
-#include "behaviortree_cpp_v3/bt_factory.h"
 #include "crossdoor_nodes.hpp"
+#include "behaviortree_cpp_v3/bt_factory.h"
 #include "behaviortree_cpp_v3/loggers/bt_cout_logger.h"
 #include "behaviortree_cpp_v3/loggers/bt_file_logger.h"
 #include "behaviortree_cpp_v3/loggers/bt_minitrace_logger.h"
@@ -12,13 +12,9 @@ int main()
 
   BehaviorTreeFactory factory;
 
-  factory.registerSimpleCondition("IsDoorOpen", std::bind(IsDoorOpen));
-  factory.registerSimpleAction("PassThroughDoor", std::bind(PassThroughDoor));
-  factory.registerSimpleAction("PassThroughWindow", std::bind(PassThroughWindow));
-  factory.registerSimpleAction("OpenDoor", std::bind(OpenDoor));
-  factory.registerSimpleAction("CloseDoor", std::bind(CloseDoor));
-  factory.registerSimpleCondition("IsDoorLocked", std::bind(IsDoorLocked));
-  factory.registerSimpleAction("UnlockDoor", std::bind(UnlockDoor));
+  // register all the actions into the factory
+  RegisterNodes(factory);
+
   auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/BT_example/xml/crossdoor_tree.xml");
 
   // This logger prints state changes on console

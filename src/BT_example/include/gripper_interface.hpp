@@ -3,28 +3,19 @@
 
 #include "behaviortree_cpp_v3/action_node.h"
 
-// We want to wrap into an ActionNode the methods open() and close()
 class GripperInterface
 {
 public:
-  GripperInterface() : _open(true) {}
-
-  BT::NodeStatus open()
+  GripperInterface() : _opened(true)
   {
-    _open = true;
-    std::cout << "GripperInterface::open" << std::endl;
-    return BT::NodeStatus::SUCCESS;
   }
 
-  BT::NodeStatus close()
-  {
-    std::cout << "GripperInterface::close" << std::endl;
-    _open = false;
-    return BT::NodeStatus::SUCCESS;
-  }
+  BT::NodeStatus open();
+
+  BT::NodeStatus close();
 
 private:
-  bool _open; // shared information
+  bool _opened;
 };
 
 #endif
