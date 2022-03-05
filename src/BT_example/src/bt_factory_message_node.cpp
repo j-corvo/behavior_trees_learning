@@ -25,7 +25,7 @@ int main()
   BT::StdCoutLogger logger_cout(tree);
 
   // This logger publish status changes using ZeroMQ. Used by Groot
-  BT::PublisherZMQ publisher_zmq(tree, 10, 1666, 1667);
+  BT::PublisherZMQ publisher_zmq(tree);
 
   printTreeRecursively(tree.rootNode());
   
