@@ -1,13 +1,6 @@
 #include "crossdoor_nodes.hpp"
 
-// This function must be implemented in the .cpp file to create
-// a plugin that can be loaded at run-time
 using namespace BT;
-
-// BT_REGISTER_NODES(factory)
-// {
-//   CrossDoor::RegisterNodes(factory);
-// }
 
 // For simplicity, in this example the status of the door is not shared
 // using ports and blackboards

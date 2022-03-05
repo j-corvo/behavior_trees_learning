@@ -1,4 +1,6 @@
 #include "behaviortree_cpp_v3/bt_factory.h"
+#include "behaviortree_cpp_v3/loggers/bt_cout_logger.h"
+#include "behaviortree_cpp_v3/loggers/bt_zmq_publisher.h"
 
 #include "say_something.hpp"
 #include "movebase_node.hpp"
@@ -14,7 +16,14 @@ int main()
 
   auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/BT_example/xml/remapping_ports_tree.xml");
 
+  // This logger prints state changes on console
+  BT::StdCoutLogger logger_cout(tree);
+
+  // This logger publish status changes using ZeroMQ. Used by Groot
+  BT::PublisherZMQ publisher_zmq(tree, 25, 1666, 1667);
+
   BT::NodeStatus status = BT::NodeStatus::RUNNING;
+  SleepMS(10000);
   // Keep on ticking until you get either a SUCCESS or FAILURE state
   while(status == BT::NodeStatus::RUNNING)
   {
