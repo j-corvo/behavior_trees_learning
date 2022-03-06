@@ -1,0 +1,65 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(bt_tutorials)
+
+# compile as static libraries
+add_compile_options(-std=c++11)
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  behaviortree_cpp_v3
+)
+
+###################################
+## catkin specific configuration ##
+###################################
+## The catkin_package macro generates cmake config files for your package
+## Declare things to be passed to dependent projects
+## INCLUDE_DIRS: uncomment this if your package contains header files
+## LIBRARIES: libraries you create in this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## DEPENDS: system dependencies of this project that dependent projects also need
+catkin_package(
+  INCLUDE_DIRS include
+#  LIBRARIES BT_example
+#  CATKIN_DEPENDS roscpp
+#  DEPENDS system_lib
+)
+
+###########
+## Build ##
+###########
+
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+)
+
+#add_executable(bt_factory_node src/bt_factory_node.cpp)
+add_executable(bt_message_node src/t02_bt_message_node.cpp src/SaySomething.cpp src/ThinkWhatToSay.cpp)
+# add_executable(bt_goal_node src/bt_goal_node.cpp)
+# add_executable(bt_mission_node src/bt_mission_node.cpp)
+# add_executable(bt_crossdoor_node src/bt_crossdoor_node.cpp)
+# add_executable(bt_crossdoor_node src/crossdoor_nodes.cpp src/bt_crossdoor_node.cpp)
+# add_executable(bt_remap_ports_node src/bt_remap_ports_node.cpp)
+# add_executable(bt_my_legacy_move_to_node src/bt_my_legacy_move_to_node.cpp)
+# add_executable(bt_coroutines_node src/bt_coroutines_node.cpp)
+
+
+# add_dependencies(bt_factory_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(bt_message_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(bt_goal_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(bt_mission_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(bt_crossdoor_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(bt_remap_ports_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(bt_my_legacy_move_to_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(bt_coroutines_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
+# target_link_libraries(bt_factory_node ${catkin_LIBRARIES})
+target_link_libraries(bt_message_node ${catkin_LIBRARIES})
+# target_link_libraries(bt_goal_node ${catkin_LIBRARIES})
+# target_link_libraries(bt_mission_node ${catkin_LIBRARIES})
+# target_link_libraries(bt_crossdoor_node ${catkin_LIBRARIES})
+# target_link_libraries(bt_remap_ports_node ${catkin_LIBRARIES})
+# target_link_libraries(bt_my_legacy_move_to_node ${catkin_LIBRARIES})
+# target_link_libraries(bt_coroutines_node ${catkin_LIBRARIES})
