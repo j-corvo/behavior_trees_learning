@@ -1,7 +1,7 @@
-#ifndef __COVERT_FROM_STRING_HPP_
-#define __COVERT_FROM_STRING_HPP_
+#ifndef __COVERT_FROM_STRING_H_
+#define __COVERT_FROM_STRING_H_
 
-#include "behaviortree_cpp_v3/action_node.h"
+#include "behaviortree_cpp_v3/basic_types.h"
 
 struct  Position2D
 {

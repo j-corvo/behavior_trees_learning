@@ -1,5 +1,4 @@
-#include "behaviortree_cpp_v3/bt_factory.h"
-#include "goal_interface.hpp"
+#include "calculate_goal.h"
 
 static const char* xml_text = R"(
 
@@ -17,11 +16,9 @@ static const char* xml_text = R"(
 
 int main()
 {
-  using namespace BT;
 
-  BehaviorTreeFactory factory;
-  factory.registerNodeType<CalculateGoal>("CalculateGoal");
-  factory.registerNodeType<PrintTarget>("PrintTarget");
+  BT::BehaviorTreeFactory factory;
+  RegisterNodes(factory);
 
   // Function read a bt from a variable(text) instead of a file
   auto tree = factory.createTreeFromText(xml_text);

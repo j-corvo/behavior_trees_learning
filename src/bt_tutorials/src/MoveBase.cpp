@@ -1,13 +1,4 @@
-#include "movebase_node.hpp"
-#include "behaviortree_cpp_v3/bt_factory.h"
-#include "behaviortree_cpp_v3/behavior_tree.h"
-
-// This function must be implemented in the .cpp file to create
-// a plugin that can be loaded at run-time
-void registerNodeMoveBase(BT::BehaviorTreeFactory &factory)
-{
-  factory.registerNodeType<MoveBaseAction>("MoveBase");
-}
+#include "movebase.h"
 
 BT::NodeStatus MoveBaseAction::tick()
 {

@@ -1,9 +1,8 @@
 #include "behaviortree_cpp_v3/bt_factory.h"
 
-// file that contains the custom nodes definitions
-#include "approach_object.hpp"
-#include "gripper_interface.hpp"
-#include "battery_interface.hpp"
+// files that contains the custom nodes definitions
+#include "approach_object.h"
+#include "gripper_interface.h"
 
 int main()
 {
@@ -18,6 +17,7 @@ int main()
   // you may also use C++11 lambdas instead of std::bind
   factory.registerSimpleCondition("CheckBattery", std::bind(CheckBattery));
 
+  //Another way to register modes form a class
   factory.registerSimpleAction("OpenGripper", std::bind(&GripperInterface::open, &gripper));
   factory.registerSimpleAction("CloseGripper", std::bind(&GripperInterface::close, &gripper));
 
@@ -26,7 +26,7 @@ int main()
 
   // IMPORTANT: when the object "tree" goes out of scope, all the
   // TreeNodes are destroyed
-  auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/BT_example/xml/my_tree.xml");
+  auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/bt_tutorials/xml/my_tree.xml");
 
   // To "execute" a Tree you need to "tick" it.
   // The tick is propagated to the children based on the logic of the tree.

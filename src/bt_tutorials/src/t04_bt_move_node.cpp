@@ -1,16 +1,17 @@
 #include "behaviortree_cpp_v3/bt_factory.h"
-#include "battery_interface.hpp"
-#include "say_something.hpp"
-#include "movebase_node.hpp"
+#include "say_something.h"
+#include "gripper_interface.h"
+#include "movebase.h"
 
 int main()
 {
   BT::BehaviorTreeFactory factory;
+  
   factory.registerSimpleCondition("BatteryOK", std::bind(CheckBattery));
   factory.registerNodeType<MoveBaseAction>("MoveBase");
   factory.registerNodeType<SaySomething>("SaySomething");
 
-  auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/BT_example/xml/reactive_sequence.xml");
+  auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/bt_tutorials/xml/reactive_sequence.xml");
 
   BT::NodeStatus status;
 

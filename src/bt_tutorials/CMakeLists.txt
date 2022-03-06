@@ -34,10 +34,10 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-#add_executable(bt_factory_node src/bt_factory_node.cpp)
+add_executable(bt_node src/t01_bt_node.cpp src/GripperInterface.cpp src/ApproachObject.cpp)
 add_executable(bt_message_node src/t02_bt_message_node.cpp src/SaySomething.cpp src/ThinkWhatToSay.cpp)
-# add_executable(bt_goal_node src/bt_goal_node.cpp)
-# add_executable(bt_mission_node src/bt_mission_node.cpp)
+add_executable(bt_calculate_goal_node src/t03_bt_calculate_goal_node.cpp src/CalculateGoal)
+add_executable(bt_move_node src/t04_bt_move_node.cpp src/MoveBase.cpp src/GripperInterface.cpp src/SaySomething.cpp)
 # add_executable(bt_crossdoor_node src/bt_crossdoor_node.cpp)
 # add_executable(bt_crossdoor_node src/crossdoor_nodes.cpp src/bt_crossdoor_node.cpp)
 # add_executable(bt_remap_ports_node src/bt_remap_ports_node.cpp)
@@ -45,20 +45,20 @@ add_executable(bt_message_node src/t02_bt_message_node.cpp src/SaySomething.cpp 
 # add_executable(bt_coroutines_node src/bt_coroutines_node.cpp)
 
 
-# add_dependencies(bt_factory_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(bt_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(bt_message_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-# add_dependencies(bt_goal_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-# add_dependencies(bt_mission_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(bt_calculate_goal_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(bt_move_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 # add_dependencies(bt_crossdoor_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 # add_dependencies(bt_remap_ports_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 # add_dependencies(bt_my_legacy_move_to_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 # add_dependencies(bt_coroutines_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
-# target_link_libraries(bt_factory_node ${catkin_LIBRARIES})
+target_link_libraries(bt_node ${catkin_LIBRARIES})
 target_link_libraries(bt_message_node ${catkin_LIBRARIES})
-# target_link_libraries(bt_goal_node ${catkin_LIBRARIES})
-# target_link_libraries(bt_mission_node ${catkin_LIBRARIES})
+target_link_libraries(bt_calculate_goal_node ${catkin_LIBRARIES})
+target_link_libraries(bt_move_node ${catkin_LIBRARIES})
 # target_link_libraries(bt_crossdoor_node ${catkin_LIBRARIES})
 # target_link_libraries(bt_remap_ports_node ${catkin_LIBRARIES})
 # target_link_libraries(bt_my_legacy_move_to_node ${catkin_LIBRARIES})
