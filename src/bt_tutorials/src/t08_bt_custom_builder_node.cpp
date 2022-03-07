@@ -1,5 +1,6 @@
 #include "behaviortree_cpp_v3/bt_factory.h"
-#include "custom_builder.hpp"
+
+#include "custom_builder.h"
 
 static const char *xml_text = R"(
 
@@ -15,12 +16,12 @@ static const char *xml_text = R"(
  
 int main()
 {
-  BehaviorTreeFactory factory;
+  BT::BehaviorTreeFactory factory;
 
   // A node builder is a functor that creates a std::unique_ptr<TreeNode>.
   // Using lambdas or std::bind, we can easily "inject" additional arguments.
-  NodeBuilder builder_A =
-      [](const std::string &name, const NodeConfiguration &config)
+  BT::NodeBuilder builder_A =
+      [](const std::string &name, const BT::NodeConfiguration &config)
   {
     return std::make_unique<Action_A>(name, config, 42, 3.14, "hello world");
   };

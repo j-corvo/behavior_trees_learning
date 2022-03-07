@@ -1,8 +1,9 @@
-#pragma once
+#ifndef __LEGACY_CODE_H_
+#define __LEGACY_CODE_H_
 
 #include <iostream>
 
-#include "behaviortree_cpp_v3/behavior_tree.h"
+#include "behaviortree_cpp_v3/basic_types.h"
 
 // This is my custom type.
 struct  Point3D 
@@ -42,3 +43,5 @@ namespace BT
     }
   }
 }
+
+#endif

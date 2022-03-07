@@ -20,15 +20,6 @@ public:
     return {InputPort<Pose2D>("pose", description)};
   }
 
-  NodeStatus tick() override
-  {
-    auto res = getInput<Pose2D>("pose");
-    if (!res)
-    {
-      throw RuntimeError("error reading port [pose]:", res.error());
-    }
-    Pose2D pose = res.value();
-    printf("Goal: [ %.1f, %.1f, %.1f ]\n", pose.x, pose.y, pose.theta);
-    return NodeStatus::SUCCESS;
-  }
+  NodeStatus tick() override;
+
 };

@@ -1,5 +1,5 @@
 #include "behaviortree_cpp_v3/bt_factory.h"
-#include "my_legacy_move_to.hpp"
+#include "legacy_code.h"
 
 static const char *xml_text = R"(
 

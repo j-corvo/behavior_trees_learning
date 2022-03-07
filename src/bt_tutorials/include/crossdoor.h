@@ -1,5 +1,6 @@
 
-#pragma once
+#ifndef __CROSSDOOR_H_
+#define __CROSSDOOR_H_
 
 #include "behaviortree_cpp_v3/bt_factory.h"
 
@@ -26,3 +27,5 @@ namespace CrossDoor
 
   void RegisterNodes(BT::BehaviorTreeFactory &factory);
 }
+
+#endif

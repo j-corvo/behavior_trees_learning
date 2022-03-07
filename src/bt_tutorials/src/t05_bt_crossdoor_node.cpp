@@ -1,5 +1,4 @@
-#include "crossdoor_nodes.hpp"
-#include "behaviortree_cpp_v3/bt_factory.h"
+#include "crossdoor.h"
 #include "behaviortree_cpp_v3/loggers/bt_cout_logger.h"
 #include "behaviortree_cpp_v3/loggers/bt_file_logger.h"
 #include "behaviortree_cpp_v3/loggers/bt_minitrace_logger.h"
@@ -15,7 +14,7 @@ int main()
   // register all the actions into the factory
   RegisterNodes(factory);
 
-  auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/BT_example/xml/crossdoor_tree.xml");
+  auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/bt_tutorials/xml/crossdoor_tree.xml");
 
   // This logger prints state changes on console
   StdCoutLogger logger_cout(tree);

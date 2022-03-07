@@ -2,9 +2,9 @@
 #include "behaviortree_cpp_v3/loggers/bt_cout_logger.h"
 #include "behaviortree_cpp_v3/loggers/bt_zmq_publisher.h"
 
-#include "say_something.hpp"
-#include "movebase_node.hpp"
-#include "print_pose_2d.hpp"
+#include "say_something.h"
+#include "movebase.h"
+#include "print_pose_2d.h"
 
 int main()
 {
@@ -14,7 +14,7 @@ int main()
   factory.registerNodeType<MoveBaseAction>("MoveBase");
   factory.registerNodeType<PrintPose2D>("PrintPose2D");
 
-  auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/BT_example/xml/remapping_ports_tree.xml");
+  auto tree = factory.createTreeFromFile("/home/rythm/thesis_ws/src/bt_tutorials/xml/remapping_ports_tree.xml");
 
   // This logger prints state changes on console
   BT::StdCoutLogger logger_cout(tree);
