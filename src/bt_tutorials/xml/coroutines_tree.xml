@@ -1,0 +1,11 @@
+<root>
+    <BehaviorTree>
+      <Timeout msec="150">
+        <Sequence name="sequence">
+          <MyAsyncAction name="action_A"/>
+          <MyAsyncAction name="action_B"/>
+          <!-- <MyAsyncAction name="action_C"/> -->
+        </Sequence>
+      </Timeout>
+    </BehaviorTree>
+</root>

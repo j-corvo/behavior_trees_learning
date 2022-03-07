@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<root>
+  <TreeNodesModel>
+    <!-- ############################### ACTION NODES ################################# -->
+    
+    <!---<Action ID="">
+      <input_port name="">comment</input_port>
+      <ouput_port name="">comment</output_port>
+    </Action>-->
+
+    <Action ID="SaySomething">
+      <input_port name="message">Message to print</input_port>
+    </Action>
+
+    <Action ID="SaySomething2">
+      <input_port name="message">Other option to print a message</input_port>
+    </Action>
+
+    <Action ID="ThinkWhatToSay">
+      <output_port name="text">Some text to print</output_port>
+    </Action>
+
+    <Action ID="OpenDoor"></Action>
+
+    <Action ID="CloseDoor"></Action>
+
+    <Action ID="UnlockDoor"></Action>
+
+    <Action ID="PassThroughDoor"></Action>
+
+    <Action ID="PassThroughWindow"></Action>
+
+    <Action ID="MoveBase">
+      <input_port name="goal">Goal</input_port>
+    </Action>
+    
+    <Action ID="PrintPose2D">
+      <input_port name="pose">Position to print</input_port>
+    </Action>
+
+
+    <!-- ############################### CONDITION NODES ############################## -->
+    
+    <!---<Condition ID="">
+      <input_port name="">comment</input_port>
+      <ouput_port name="">comment</output_port>
+    </Condition>-->
+
+    <Condition ID="IsDoorOpen"></Condition>
+
+    <Condition ID="IsDoorLocked"></Condition>
+
+    <!-- ############################### CONTROL NODES ################################ -->
+    
+    <!---<Control ID="">
+      <input_port name="">comment</input_port>
+      <ouput_port name="">comment</output_port>
+    </Control>-->
+
+    <!-- ############################### DECORATOR NODES ############################## -->
+    
+    <!---<Decorator ID="">
+      <input_port name="">comment</input_port>
+      <ouput_port name="">comment</output_port>
+    </Decorator>-->
+
+    <Decorator ID="RetryUntilSuccessful">
+      <input_port name="num_attempts">Repeat N(num_attempts) times</input_port>
+    </Decorator>
+
+  </TreeNodesModel>
+</root>
+  
