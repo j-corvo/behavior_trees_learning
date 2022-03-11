@@ -1,5 +1,5 @@
-#ifndef __COVERT_FROM_STRING_H_
-#define __COVERT_FROM_STRING_H_
+#ifndef __COVERT_FROM_STRING_HPP_
+#define __COVERT_FROM_STRING_HPP_
 
 #include "behaviortree_cpp_v3/basic_types.h"
 

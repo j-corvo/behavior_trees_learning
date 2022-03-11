@@ -5,9 +5,9 @@
             <Inverter>
                 <IsDoorOpen/>
             </Inverter>
-            <RetryUntilSuccessful num_attempts="4"> <!-- Note repository type RetryUntilSuccesful with just one 's'-->
+            <RetryUntilSuccesful num_attempts="4"> <!-- Note repository type RetryUntilSuccesful with just one 's'-->
                 <OpenDoor/>
-            </RetryUntilSuccessful>
+            </RetryUntilSuccesful>
             <PassThroughDoor/>
         </Sequence>
     </BehaviorTree>
