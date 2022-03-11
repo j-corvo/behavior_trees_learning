@@ -11,11 +11,6 @@ add_compile_options(-std=c++11)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-<<<<<<< HEAD:src/BT_example/CMakeLists.txt
-  roscpp
-  roslib
-=======
->>>>>>> devel:src/turtlebot3_bt_nav/CMakeLists.txt
   behaviortree_cpp_v3
   roscpp
 )
@@ -60,16 +55,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-<<<<<<< HEAD:src/BT_example/CMakeLists.txt
-add_executable(bt_factory_node src/bt_factory_node.cpp)
-add_executable(bt_factory_message_node src/bt_factory_message_node.cpp)
-add_executable(bt_goal_node src/bt_goal_node.cpp)
-add_executable(bt_mission_node src/bt_mission_node.cpp)
-add_executable(bt_crossdoor_node src/bt_crossdoor_node.cpp)
-add_executable(bt_remap_ports_node src/bt_remap_ports_node.cpp)
-=======
 # add_executable(${PROJECT_NAME}_node src/turtlebot3_bt_nav_node.cpp)
->>>>>>> devel:src/turtlebot3_bt_nav/CMakeLists.txt
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -79,29 +65,12 @@ add_executable(bt_remap_ports_node src/bt_remap_ports_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-<<<<<<< HEAD:src/BT_example/CMakeLists.txt
-add_dependencies(bt_factory_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(bt_factory_message_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(bt_goal_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(bt_mission_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(bt_crossdoor_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(bt_remap_ports_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-## Specify libraries to link a library or executable target against
-target_link_libraries(bt_factory_node ${catkin_LIBRARIES})
-target_link_libraries(bt_factory_message_node ${catkin_LIBRARIES})
-target_link_libraries(bt_goal_node ${catkin_LIBRARIES})
-target_link_libraries(bt_mission_node ${catkin_LIBRARIES})
-target_link_libraries(bt_crossdoor_node ${catkin_LIBRARIES})
-target_link_libraries(bt_remap_ports_node ${catkin_LIBRARIES})
-=======
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
->>>>>>> devel:src/turtlebot3_bt_nav/CMakeLists.txt
 
 # add_library(bt_sample_nodes STATIC
 #     movebase_node.cpp )
@@ -109,15 +78,11 @@ target_link_libraries(bt_remap_ports_node ${catkin_LIBRARIES})
 # target_link_libraries(bt_sample_nodes PRIVATE behaviortree_cpp_v3)
 # set_target_properties(bt_sample_nodes PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${BEHAVIOR_TREE_LIB_DESTINATION} )
 
-<<<<<<< HEAD:src/BT_example/CMakeLists.txt
-# # to create a plugin, compile them in this way instead
-=======
 ## Add gtest based cpp test target and link libraries
 # catkin_add_gtest(${PROJECT_NAME}-test test/test_turtlebot3_bt_nav.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
->>>>>>> devel:src/turtlebot3_bt_nav/CMakeLists.txt
 
 # add_library(movebase_node_dyn   SHARED movebase_node.cpp )
 # target_link_libraries(movebase_node_dyn PRIVATE behaviortree_cpp_v3)
