@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<root>
+  <TreeNodesModel>
+    <!-- ############################### ACTION NODES ################################# -->
+    
+    <!---<Action ID="">
+      <input_port name="">comment</input_port>
+      <ouput_port name="">comment</output_port>
+    </Action>-->
+
+    <Action ID="GoToPose">
+      <input_port name="goal">Goal</input_port>
+    </Action>
+
+
+    <!-- ############################### CONDITION NODES ############################## -->
+    
+    <!---<Condition ID="">
+      <input_port name="">comment</input_port>
+      <ouput_port name="">comment</output_port>
+    </Condition>-->
+
+
+    <!-- ############################### CONTROL NODES ################################ -->
+    
+    <!---<Control ID="">
+      <input_port name="">comment</input_port>
+      <ouput_port name="">comment</output_port>
+    </Control>-->
+
+    <!-- ############################### DECORATOR NODES ############################## -->
+    
+    <!---<Decorator ID="">
+      <input_port name="">comment</input_port>
+      <ouput_port name="">comment</output_port>
+    </Decorator>-->
+
+    <Decorator ID="RetryUntilSuccessful">
+      <input_port name="num_attempts">Repeat N(num_attempts) times</input_port>
+    </Decorator>
+
+  </TreeNodesModel>
+</root>
+  

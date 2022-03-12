@@ -34,6 +34,7 @@ int main()
   // Keep on ticking until you get either a SUCCESS or FAILURE state
   while (status == NodeStatus::RUNNING)
   {
+    CrossDoor::SleepMS(6000);
     status = tree.tickRoot();
     CrossDoor::SleepMS(1); // optional sleep to avoid "busy loops"
   }

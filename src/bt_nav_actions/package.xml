@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>turtlebot3_bt_nav</name>
+  <name>bt_nav_actions</name>
   <version>0.0.0</version>
-  <description>The turtlebot3_bt_nav package</description>
-
+  <description>The bt_nav_actions package</description>
+  
   <maintainer email="joaonunocorvo@gmail.com">joao-corvo</maintainer>
 
   <license>BSD</license>

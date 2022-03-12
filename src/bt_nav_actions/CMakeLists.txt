@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(turtlebot3_bt_nav)
+project(bt_nav_actions)
 
 # compile as static libraries
 add_compile_options(-std=c++11)
@@ -59,9 +59,9 @@ find_package(Boost REQUIRED COMPONENTS system)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+  INCLUDE_DIRS include
 #  LIBRARIES turtlebot3_bt_nav
-  CATKIN_DEPENDS behaviortree_cpp_v3 roscpp actionlib std_msgs
+  CATKIN_DEPENDS behaviortree_cpp_v3 roscpp actionlib std_msgs move_base_msgs
 #  DEPENDS system_lib
 )
 
@@ -78,7 +78,10 @@ include_directories(
 )
 
 add_executable(send_nav_goals_node src/send_nav_goals.cpp)
+add_executable(bt_nav_move_base_node src/MoveBase.cpp src/bt_nav_move_base_node.cpp)
 
 target_link_libraries(send_nav_goals_node ${catkin_LIBRARIES})
+target_link_libraries(bt_nav_move_base_node ${catkin_LIBRARIES})
 
 add_dependencies(send_nav_goals_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(bt_nav_move_base_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
