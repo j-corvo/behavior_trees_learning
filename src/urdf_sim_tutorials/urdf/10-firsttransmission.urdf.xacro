@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="publishjoints" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="firsttransmission" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:property name="width" value="0.2" />
   <xacro:property name="leglen" value="0.6" />
@@ -213,6 +213,18 @@
     <origin xyz="0 0 ${bodylen/2}"/>
   </joint>
 
+  <!-- This block connects the head_swivel joint to an actuator (motor), which informs both
+  simulation and visualization of the robot -->
+  <transmission name="head_swivel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="$head_swivel_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="head_swivel">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  
   <link name="box">
     <visual>
       <geometry>
@@ -237,7 +249,7 @@
 
   <!-- Gazebo plugin for ROS Control -->
   <gazebo>
-    <plugin name="gaqzebo_ros_control" filename="libgazebo_ros_control.so">
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/</robotNamespace>
     </plugin>
   </gazebo>

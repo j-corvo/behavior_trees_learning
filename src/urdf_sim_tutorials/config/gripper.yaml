@@ -1,0 +1,5 @@
+type: "position-controllers/JointGroupPositionController"
+joints:
+  - gripper_extension
+  - left_gripper_joint
+  - right_gripper_joint

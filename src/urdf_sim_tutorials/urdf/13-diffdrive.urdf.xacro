@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="publishjoints" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="gripper" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:property name="width" value="0.2" />
   <xacro:property name="leglen" value="0.6" />
@@ -68,6 +68,24 @@
       <origin xyz="${baselen*reflect/3} 0 -${wheeldiam/2+.05}" rpy="0 0 0"/>
     </joint>
 
+    <transmission name="${prefix}_${suffix}_wheel_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="${prefix}_${suffix}_wheel_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="${prefix}_${suffix}_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    </transmission>
+
+    <gazebo reference="${prefix}_${suffix}_wheel">
+      <mu1 value="200.0"/>
+      <mu2 value="100.0"/>
+      <kp value="10000000.0" />
+      <kd value="1.0" />
+      <material>Gazebo/Grey</material>
+    </gazebo>
+    
   </xacro:macro>
 
   <xacro:macro name="leg" params="prefix reflect">
@@ -127,6 +145,16 @@
     <origin rpy="0 0 0" xyz="${width-.01} 0 0.2"/>
   </joint>
 
+  <transmission name="gripper_extension_trans" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="gripper_extension_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="gripper_extension">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
   <link name="gripper_pole">
     <visual>
       <geometry>
@@ -166,6 +194,16 @@
       </collision>
       <xacro:default_inertial mass="0.05"/>
     </link>
+
+    <transmission name="${prefix}_gripper_trans" type="SimpleTransmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="${prefix}_gripper_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="${prefix}_gripper_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+    </transmission>
 
     <joint name="${prefix}_tip_joint" type="fixed">
       <parent link="${prefix}_gripper"/>
@@ -211,8 +249,21 @@
     <child link="head"/>
     <axis xyz="0 0 1"/>
     <origin xyz="0 0 ${bodylen/2}"/>
+    <limit effort="30" velocity="1.0"/>
   </joint>
 
+  <!-- This block connects the head_swivel joint to an actuator (motor), which informs both
+  simulation and visualization of the robot -->
+  <transmission name="head_swivel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="$head_swivel_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="head_swivel">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  
   <link name="box">
     <visual>
       <geometry>
