@@ -46,7 +46,7 @@ bool BTNavAction::goToPose(Pose2D pose)
   move_base_msgs::MoveBaseGoal goal;
 
   //we'll send a goal to the robot to move 1 meter forward
-  goal.target_pose.header.frame_id = "base_link";
+  goal.target_pose.header.frame_id = "map";
   goal.target_pose.header.stamp = ros::Time::now();
 
   goal.target_pose.pose.position.x = pose.x;
@@ -61,12 +61,12 @@ bool BTNavAction::goToPose(Pose2D pose)
 
   if(mb_client.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
   {
-    ROS_INFO("Hooray, the base moved 1 meter forward");
+    ROS_INFO("Hooray, goal reached");
     return true;
   }
   else
   {
-    ROS_INFO("The base failed to move forward 1 meter for some reason");
+    ROS_INFO("The base failed to reache teh goal for some reason");
     return false;
   }
 }
@@ -86,12 +86,14 @@ void BTNavAction::run()
 
   //Because bt connection on Groot 
   // it needs to have a delay before the tree appears 
-  sleep(60); 
+  sleep(10); 
 
-  while (ros::ok())
-  {
-      tree.tickRoot();
-      r.sleep();
-      ros::spinOnce();
-  }
+  tree.tickRoot();
+  
+//   while (ros::ok())
+//   {
+//       tree.tickRoot();
+//       r.sleep();
+//       ros::spinOnce();
+//   }
 }

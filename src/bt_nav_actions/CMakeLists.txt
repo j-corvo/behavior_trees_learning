@@ -77,11 +77,11 @@ include_directories(
   ${Boost_INCLUDE_DIRS}
 )
 
-add_executable(send_nav_goals_node src/send_nav_goals.cpp)
+# add_executable(send_nav_goals_node src/send_nav_goals.cpp)
 add_executable(bt_nav_move_base_node src/MoveBase.cpp src/bt_nav_move_base_node.cpp)
 
-target_link_libraries(send_nav_goals_node ${catkin_LIBRARIES})
+# target_link_libraries(send_nav_goals_node ${catkin_LIBRARIES})
 target_link_libraries(bt_nav_move_base_node ${catkin_LIBRARIES})
 
-add_dependencies(send_nav_goals_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(send_nav_goals_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(bt_nav_move_base_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

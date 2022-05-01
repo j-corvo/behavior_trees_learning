@@ -1,7 +1,7 @@
 <root main_tree_to_execute = "MainTree" >
   <BehaviorTree ID="MainTree">
     <Sequence name="move_sequence">
-      <GoToPose goal="1;0;0" />
+      <GoToPose goal="2;0;0" />
     </Sequence>
   </BehaviorTree>
 </root>
