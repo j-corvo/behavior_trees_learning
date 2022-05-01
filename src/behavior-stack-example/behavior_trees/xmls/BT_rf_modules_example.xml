@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+ Copyright (C) 2020 Fondazione Istituto Italiano di Tecnologia (IIT)
+ All Rights Reserved.
+-->
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <ReactiveSequence>
+          <Condition ID="YARPCondition" name="RFConditionExample"/>
+          <Action ID="YARPAction" name="RFActionExample"/>
+        </ReactiveSequence>
+    </BehaviorTree>
+</root>

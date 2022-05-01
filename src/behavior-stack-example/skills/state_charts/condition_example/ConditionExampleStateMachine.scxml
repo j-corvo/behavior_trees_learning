@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" xmlns:scope="http://www.scope.org/scope" xmlns:scope_yarp="http://www.scope.org/scope_yarp" name="ConditionExampleStateMachine" datamodel="cplusplus:ConditionExampleDataModel:ConditionExampleDataModel.h" scope:skill_version="0.1" qt:editorversion="4.11.0" initial="get">
+    <qt:editorinfo initialGeometry="45.30;-198.76;-20;-20;40;40"/>
+    <state id="get" scope:bt_status="SKILL_IDLE">
+        <qt:editorinfo scenegeometry="45.30;73.70;-14.70;23.70;120;100" geometry="45.30;73.70;-60;-50;120;100"/>
+        <onentry>
+            <log expr="&quot;Inside get&quot;"/>
+            <script>
+				counter_value = counter.get_value();
+				stateMachine()-&gt;submitEvent((counter_value &lt;10) ? &quot;lower_than_10&quot; : &quot;not_lower_than_10&quot;);</script>
+        </onentry>
+        <transition type="internal" event="lower_than_10" target="success">
+            <qt:editorinfo movePoint="42.55;5.01"/>
+        </transition>
+        <transition type="internal" event="not_lower_than_10" target="failure">
+            <qt:editorinfo movePoint="-26.28;43.80"/>
+        </transition>
+    </state>
+    <state id="success" scope:bt_status="SKILL_SUCCESS">
+        <qt:editorinfo scenegeometry="-117.38;212.79;-177.38;162.79;120;100" geometry="-117.38;212.79;-60;-50;120;100"/>
+        <onentry>
+            <log expr="&quot;Inside Success&quot;"/>
+        </onentry>
+    </state>
+    <state id="failure" scope:bt_status="SKILL_FAILURE">
+        <qt:editorinfo scenegeometry="230.48;212.79;170.48;162.79;120;100" geometry="230.48;212.79;-60;-50;120;100"/>
+
+        <onentry>
+            <log expr="&quot;Inside Failure&quot;"/>
+        </onentry>
+    </state>
+</scxml>
