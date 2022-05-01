@@ -2,11 +2,11 @@
 
 ## Launch Turtlebot Navigation
 
-Source ros noetic:
+Source ros noetic (do this in every terminal):
 
 `source /opt/ros/noetic/setup.bash`
 
-Go to your workspace directory and source it on every terminal: 
+Go to your workspace directory and source it (do this in every terminal): 
 
 1. `cd ~/{workspace_dir}`
 
