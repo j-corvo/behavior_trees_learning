@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <node pkg="bt_nav_actions" type="bt_nav_move_base_node" name="bt_nav_move_base_node" output="screen"/>
+
+</launch>
